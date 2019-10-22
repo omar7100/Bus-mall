@@ -67,11 +67,14 @@ function renderbus() {
     var leftThingImageElement = Stuff.leftImage;
     var centerThingImageElement = Stuff.centerImage;
     var rightThingImageElement = Stuff.rightImage;
+
     leftThingImageElement.setAttribute('src', Stuff.leftObject.src);
     leftThingImageElement.setAttribute('alt', Stuff.leftObject.title);
     centerThingImageElement.setAttribute('src', Stuff.centerObject.src);
+
     centerThingImageElement.setAttribute('alt', Stuff.centerObject.title);
     rightThingImageElement.setAttribute('src', Stuff.rightObject.src);
+
     rightThingImageElement.setAttribute('alt', Stuff.rightObject.title);
     Stuff.leftTitle.textContent = Stuff.leftObject.title;
     Stuff.centerTitle.textContent = Stuff.centerObject.title;
@@ -96,6 +99,7 @@ function tableUpdate() {
         addStuff('td', row, thing.title);
         addStuff('td', row, '' + thing.clickCtr);
         addStuff('td', row, '' + thing.shownCtr);
+        addStuff('td',row, '' + ' had ' + thing.clickCtr + 'votes' + 'and was' + thing.shownCtr);
     }
 }
 function addStuff(tag, container, text) {
