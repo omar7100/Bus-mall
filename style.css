@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(#3498db, beige) fixed;
+  text-align: center;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  font-family: 'Fascinate Inline', cursive;
+  font-family: 'Anton', sans-serif;
+}
+
+#content-ul {
+  font-size: 17.3px;
+  display: block;
+  margin: auto;
+  padding-top: -100px;
+  padding-left: 400px;
+}
+
+section div {
+  /* width: 33.33%; */
+  display: inline;
+  padding: 80px;
+  float: left;
+  padding-bottom: -20px;
+}
+
+section div img {
+  max-width: 250px;
+  height: 250px;
+  border: 5px solid #4b4075;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+
+/* table {
+  border-collapse: collapse;
+  font-size: 80%;
+  color: black;
+} */
+
+h1 {
+  color: #0f0570;
+  transition: 0.8s;
+}
+
+#element {
+  display: block;
+  margin: auto;
+  /* padding-top: 220px; */
+}
