@@ -3,11 +3,11 @@
 }
 
 body {
-  background: radial-gradient(#3498db, beige) fixed;
+  background: radial-gradient(#c44ca6, beige) fixed;
   text-align: center;
-  font-family: 'Liu Jian Mao Cao', cursive;
-  font-family: 'Fascinate Inline', cursive;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: monospace;
 }
 
 #content-ul {
@@ -29,20 +29,15 @@ section div {
 section div img {
   max-width: 250px;
   height: 250px;
-  border: 5px solid #4b4075;
+  border: 5px solid #a30000;
   cursor: pointer;
   transition: 0.8s;
 }
 
 
-/* table {
-  border-collapse: collapse;
-  font-size: 80%;
-  color: black;
-} */
 
 h1 {
-  color: #0f0570;
+  color: #000000;
   transition: 0.8s;
 }
 

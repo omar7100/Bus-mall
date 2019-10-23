@@ -26,28 +26,26 @@ Stuff.leftObject = null;
 Stuff.centerObject = null;
 Stuff.rightObject = null;
 
-new Stuff('bag', 'images/bag.jpg');
-new Stuff('banana', 'images/banana.jpg');
-new Stuff('bathroom', 'images/bathroom.jpg');
-new Stuff('boots', 'images/boots.jpg');
-new Stuff('breakfast', 'images/breakfast.jpg');
-new Stuff('bubblegum', 'images/bubblegum.jpg');
-new Stuff('chair', 'images/chair.jpg');
-new Stuff('cthulhu', 'images/cthulhu.jpg');
-new Stuff('dog-duck', 'images/dog-duck.jpg');
-new Stuff('dragon', 'images/dragon.jpg');
-new Stuff('pen', 'images/pen.jpg');
-new Stuff('pet-sweep', 'images/pet-sweep.jpg');
-new Stuff('scissors', 'images/scissors.jpg');
-new Stuff('shark', 'images/shark.jpg');
-new Stuff('sweep', 'images/sweep.jpg');
-new Stuff('tauntaun', 'images/tauntaun.jpg');
-new Stuff('unicorn', 'images/unicorn.jpg');
-new Stuff('usb', 'images/usb.jpg');
-new Stuff('water-can', 'images/water-can.jpg');
-new Stuff('wine-glass', 'images/wine-glass.jpg');
-
-
+new Stuff('Bag', 'images/bag.jpg');
+new Stuff('Banana', 'images/banana.jpg');
+new Stuff('Bathroom', 'images/bathroom.jpg');
+new Stuff('Boots', 'images/boots.jpg');
+new Stuff('Breakfast', 'images/breakfast.jpg');
+new Stuff('Bubblegum', 'images/bubblegum.jpg');
+new Stuff('Chair', 'images/chair.jpg');
+new Stuff('Cthulhu', 'images/cthulhu.jpg');
+new Stuff('Dog-duck', 'images/dog-duck.jpg');
+new Stuff('Dragon', 'images/dragon.jpg');
+new Stuff('Pen', 'images/pen.jpg');
+new Stuff('Pet-sweep', 'images/pet-sweep.jpg');
+new Stuff('Scissors', 'images/scissors.jpg');
+new Stuff('Shark', 'images/shark.jpg');
+new Stuff('Sweep', 'images/sweep.png');
+new Stuff('Tauntaun', 'images/tauntaun.jpg');
+new Stuff('Unicorn', 'images/unicorn.jpg');
+new Stuff('Usb', 'images/usb.gif');
+new Stuff('Water-can', 'images/water-can.jpg');
+new Stuff('Wine-glass', 'images/wine-glass.jpg');
 
 
 
@@ -84,7 +82,7 @@ function renderBus() {
 
     var leftImageElement = Stuff.leftImage;
     var centerimageElement = Stuff.centerimage;
-    var rightBusMallImageElement = Stuff.rightImage;
+    var rightStuffImageElement = Stuff.rightImage;
 
     leftImageElement.setAttribute('src', Stuff.leftObject.src);
     leftImageElement.setAttribute('alt', Stuff.leftObject.title);
@@ -92,8 +90,8 @@ function renderBus() {
     centerimageElement.setAttribute('src', Stuff.centerObject.src);
     centerimageElement.setAttribute('alt', Stuff.centerObject.title);
     
-    rightBusMallImageElement.setAttribute('src', Stuff.rightObject.src);
-    rightBusMallImageElement.setAttribute('alt', Stuff.rightObject.title);
+    rightStuffImageElement.setAttribute('src', Stuff.rightObject.src);
+    rightStuffImageElement.setAttribute('alt', Stuff.rightObject.title);
 
     Stuff.leftTitle.textContent = Stuff.leftObject.title;
     Stuff.centerTitle.textContent = Stuff.centerObject.title;
@@ -135,28 +133,28 @@ function addStuff(tag, container, text) {
     return element;
 }
 
-function getbusmall() {
+function getStuff() {
     var data = localStorage.getItem('productsitem');
-    var busmalldata = JSON.parse(data);
-    if (busmalldata) {
+    var Stuffdata = JSON.parse(data);
+    if (Stuffdata) {
 
-        Stuff.all = busmalldata;
+        Stuff.all = Stuffdata;
     }
 
 }
 
 
-function setbusmall() {
-    var BusString = JSON.stringify(Stuff.all)
-    localStorage.setItem('productsitem', BusString)
+function setStuff() {
+    var BusString = JSON.stringify(Stuff.all);
+    localStorage.setItem('productsitem', BusString);
 }
 
 
 function clicks(event) {
-
+    setStuff();
     var clickedId = event.target.id;
     var ThingClicked;
-    setbusmall();
+
     if (clickedId === 'leftimage') {
         ThingClicked = Stuff.leftObject;
     } else if (clickedId === 'centerimage') {
@@ -172,21 +170,19 @@ function clicks(event) {
         Stuff.roundCtr++;
 
         if (Stuff.roundCtr === Stuff.roundLimit) {
-            rendernewul();
-            newChart();
+        
             alert('No more clicking for you!');
-
+             newChart();
+             rendernewul();
             Stuff.container.removeEventListener('click', clicks);
 
         } else {
 
             renderBus();
-            // setbusmall();
+            
         }
     }
 }
-
-
 
 
 function newChart() {
@@ -211,13 +207,13 @@ function newChart() {
             ],
             datasets: [{
                     label: 'Item Vote',
-                    backgroundColor: 'Blue',
+                    backgroundColor: 'green',
                     borderColor: 'black',
                     data: showArray,
                 },
                 {
                     label: 'Item Shown',
-                    backgroundColor: 'red',
+                    backgroundColor: 'lightgreen',
                     borderColor: 'black',
                     data: proArray,
                 }
@@ -230,4 +226,4 @@ function newChart() {
 Stuff.container.addEventListener('click', clicks);
 
 renderBus();
-getbusmall();
+getStuff();
