@@ -1,0 +1,47 @@
+* 
+
+{
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: radial-gradient(#cf1c94, beige) fixed;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace;
+  }
+  
+  #content-ul {
+    font-size: 17.3px;
+    display: flexbox;
+    margin: auto;
+    padding-top: -100px;
+    padding-left: 400px;
+  }
+  
+  section div {
+    display: inline;
+    padding: 80px;
+    float: left;
+    padding-bottom: -20px;
+  }
+  
+  section div img {
+    max-width: 250px;
+    height: 250px;
+    border: 5px solid #d8e700;
+    cursor: pointer;
+    transition: 0.8s;
+  }
+  
+  
+  
+  h1 {
+    color: #000000;
+    transition: 0.8s;
+  }
+  
+  #element {
+    display: block;
+    margin: auto;
+  }
